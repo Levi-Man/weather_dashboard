@@ -6,7 +6,7 @@ let searchTerm = document.querySelector('#search-input');
 let city;
 
 
-
+displaySearchHistory();
 
 
 document.getElementById("form-card").addEventListener("submit", getCityApi);
@@ -61,16 +61,22 @@ fetch(cityCodeUrl)
                         searchTerm);
 
                     // // put icon in place
-                    // let iconUrl = 'https://openweathermap.org/img/wn/' + weatherIconCode + '@2x.png';
-                    // let input = document.getElementById('iconDiv');
-                    // console.log(iconUrl);
-                    // input.src = iconUrl;
+                    iconDeploy();
+                    function iconDeploy() {
+                    let iconUrl = 'https://openweathermap.org/img/wn/' + weatherIconCode + '@2x.png';
+                                        
+                    let iconDisplay = document.createElement('img');
 
+                    resultsContainer.append(iconDisplay);
+
+                    iconDisplay.src=iconUrl;
+                    }
+                    
                     let weatherResults = document.createElement('div');
 
                     resultsContainer.append(weatherResults);
 
-                    weatherResults.innerHTML = (weatherIconCode + ' <h5>Today</h5>' + currentTime + ' Temp: ' + currentTemp + 'c ' + 'Humidity: ' + currentHumid + ' Wind Speed: ' + currentWind + 'kph');
+                    weatherResults.innerHTML = (' <h5>Today</h5>' + currentTime + ' Temp: ' + currentTemp + 'c ' + 'Humidity: ' + currentHumid + ' Wind Speed: ' + currentWind + 'kph');
 
                 }
                 //for loop that gets every 8th index starting at 8
@@ -95,6 +101,7 @@ fetch(cityCodeUrl)
         //add new search to array
         searchHistory.unshift(searchInput);
 
+        //limit search history to 5 items
         searchHistory = searchHistory.slice(0, 5);
 
         //save new search history
@@ -110,10 +117,12 @@ fetch(cityCodeUrl)
         // console.log(searchList);
         let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
+        //display search history on page
         searchHistory.forEach(function (search) {
             let listItem = document.createElement('li');
             listItem.textContent = search;
             searchList.appendChild(listItem);
+            // add clickability to search history and trigger function getCityApi
             listItem.addEventListener('click', function() {
                 searchTerm.value = search;
                 console.log(search);
