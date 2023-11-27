@@ -1,15 +1,15 @@
-let searchTerm = document.getElementById('#search-input');
+let searchTerm = document.querySelector('#search-input');
 let formEl = document.getElementById('#form-card');
 let apiKey = "2ac4a3b4e64c6c4912def98a2d6f546d";
 
 
 let city;
 
-let cityCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchTerm + ',&appid=' + apiKey;
-// let weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
+let cityCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchTerm + '&appid=' + apiKey;
 
 
-formEl.addEventListener("click", getCityApi);
+
+document.getElementById("form-card").addEventListener("submit", getCityApi);
 
 function search() {
 
@@ -42,16 +42,19 @@ function getWeatherApi() {
 //fetch city information to get lon and lat
 function getCityApi() {
 
+    event.preventDefault();
     fetch(cityCodeUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            let cityLat = data.lat.value;
-            let cityLon = data.lon.value;
+            let cityLat = data.lat;
+            let cityLon = data.lon;
             console.log(cityLat);
             console.log(cityLon);
         });
+
+        let weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + cityLat + '&lon=' + cityLon + '&appid=' + apiKey;
 
     fetch(weatherUrl)
         .then(function (response) {
