@@ -34,7 +34,7 @@
     <title>Weather Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/style.css">
-    
+
 </head>
 
 <body>
@@ -42,26 +42,59 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-5 col-lg-3 d-md-block bg-light sidebar">
+            <nav id="sidebar" class="col-md-5 col-lg-3 d-md-block bg-dark text-light sidebar">
                 <div class="position-sticky">
 
                     <!-- Search Bar in Sidebar -->
                     <form id='form-card' class="d-flex">
-                        <input id="search-input" class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                        <button id= "search-btn" class="btn btn-outline-secondary" type="submit">Search City</button>
+                        <input id="search-input" class="form-control me-1" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button id="search-btn" class="btn btn-outline-secondary" type="submit">Search City</button>
                     </form>
                     <!-- Sidebar History -->
-                    <ul class="city-history flex-column mt-3">
-                        
+                    <ul id="city-history" class="flex-column mt-3">
+
                     </ul>
                 </div>
             </nav>
 
             <!-- Main Content -->
-            <main class="col-md-6 ms-sm-auto col-lg-9 px-md-4">
+            <main class="col-md-7 ms-sm-auto col-lg-9 px-md-4 bg-dark text-light">
                 <!-- Content Goes Here -->
-                <h2>Wethurr Dashbored</h2>
-                <div id="searchResults"></div>
+                <h2>Weather Dashboard</h2>
+                <div class="container my-5 bg-dark text-light" my-id="forecastScreen">
+                    <div id="searchResults" class="container col-12 col-md-7 col-lg-9">
+                        <div id="iconDiv"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <h3 id="title1"></h3>
+                            <h5 id="weather1"></h5>
+                            <p id="tomorrow1"></p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <h3 id="title2"></h3>
+                            <h5 id="weather2"></h5>
+                            <p id="tomorrow2"></p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <h3 id="title3"></h3>
+                            <h5 id="weather3"></h5>
+                            <p id="tomorrow3"></p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <h3 id="title4"></h3>
+                            <h5 id="weather4"></h5>
+                            <p id="tomorrow4"></p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <h3 id="title5"></h3>
+                            <h5 id="weather5"></h5>
+                            <p id="tomorrow5"></p>
+                        </div>
+
+                    </div>
+                </div>
             </main>
         </div>
     </div>
