@@ -27,3 +27,13 @@ The search string entered in the search bar is saved to local storage.
 The last 5 saved searches are presented to the user in a list under the search bar. 
 The user can click on a city name in the list to once again pull up the weather for that city. 
 
+Deployed page: 
+
+https://levi-man.github.io/weather_dashboard/
+
+
+
+
+github repo: 
+
+https://github.com/Levi-Man/weather_dashboard
