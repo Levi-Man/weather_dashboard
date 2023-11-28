@@ -19,7 +19,7 @@ document.getElementById("form-card").addEventListener("submit", getCityApi);
 function getCityApi() {
     event.preventDefault();
     // let searchTerm = document.querySelector('#search-input').value;
-    let cityCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchTerm.value + '&appid=' + apiKey;
+    let cityCodeUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchTerm.value + '&appid=' + apiKey;
     console.log(searchTerm.value);
 
     saveSearch();
