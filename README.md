@@ -16,3 +16,12 @@ THEN the city is stored in the search history and displayed on the page
 WHEN I click on a city name in the search history list
 THEN I am once again presented with the current weather for that city
 
+__________________________________________
+
+There are two fetches implemented in this code. 
+The first fetch is to the geocode api which will generate the lon and lat values of the city searched. 
+The second fetch is to the weeather api to generate the weather forecast.
+The search string entered in the search bar is saved to local storage.
+The last 5 saved searches are presented to the user in a list under the search bar. 
+The user can click on a city name in the list to once again pull up the weather for that city. 
+
