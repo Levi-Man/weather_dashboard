@@ -71,9 +71,10 @@ fetch(cityCodeUrl)
 
                     iconDisplay.src=iconUrl;
                     }
-                    
+
                     let weatherResults = document.createElement('div');
 
+                    
                     resultsContainer.append(weatherResults);
 
                     weatherResults.innerHTML = (' <h5>Today</h5>' + currentTime + ' Temp: ' + currentTemp + 'c ' + 'Humidity: ' + currentHumid + ' Wind Speed: ' + currentWind + 'kph');
@@ -120,6 +121,7 @@ fetch(cityCodeUrl)
         //display search history on page
         searchHistory.forEach(function (search) {
             let listItem = document.createElement('li');
+            listItem.classList.add('p-2', 'bg-light', 'text-dark', 'border', 'border-dark', 'rounded')
             listItem.textContent = search;
             searchList.appendChild(listItem);
             // add clickability to search history and trigger function getCityApi
