@@ -18,6 +18,8 @@ THEN I am once again presented with the current weather for that city
 
 __________________________________________
 
+![screenshot](https://github.com/Levi-Man/weather_dashboard/blob/main/Images/Screenshot%202023-11-27%20213524.png)
+
 There are two fetches implemented in this code. 
 The first fetch is to the geocode api which will generate the lon and lat values of the city searched. 
 The second fetch is to the weeather api to generate the weather forecast.
