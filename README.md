@@ -18,6 +18,8 @@ THEN I am once again presented with the current weather for that city
 
 __________________________________________
 
+![screenshot](https://github.com/Levi-Man/weather_dashboard/blob/main/Images/Screenshot%202023-11-27%20213524.png)
+
 There are two fetches implemented in this code. 
 The first fetch is to the geocode api which will generate the lon and lat values of the city searched. 
 The second fetch is to the weeather api to generate the weather forecast.
@@ -25,3 +27,13 @@ The search string entered in the search bar is saved to local storage.
 The last 5 saved searches are presented to the user in a list under the search bar. 
 The user can click on a city name in the list to once again pull up the weather for that city. 
 
+Deployed page: 
+
+https://levi-man.github.io/weather_dashboard/
+
+
+
+
+github repo: 
+
+https://github.com/Levi-Man/weather_dashboard
